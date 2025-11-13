@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Create Listing — StudentRent</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">StudentRent</h1>
+      <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="create.html" class="btn-primary">List a place</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Create a listing</h2>
+      <form id="createForm" class="form-grid">
+        <label>Title<input name="title" required /></label>
+        <label>Address<input name="address" required /></label>
+        <label>Monthly Rent (₹)<input name="rent" type="number" required /></label>
+        <label>Type
+          <select name="type">
+            <option>Room</option>
+            <option>PG</option>
+            <option>Apartment</option>
+          </select>
+        </label>
+
+        <label>College (optional)<input name="college" placeholder="e.g., DGI or Jamia" /></label>
+        <label>Image URL (optional)<input name="image" placeholder="paste full image URL or leave blank" /></label>
+
+        <div style="grid-column:1/-1;margin-top:6px">
+          <button class="btn-primary" type="submit">Create (save locally)</button>
+          <a class="btn-ghost" href="index.html" style="margin-left:8px">Cancel</a>
+        </div>
+      </form>
+
+      <div id="createMsg" class="note" style="display:none;margin-top:12px"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© StudentRent — Demo</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    window.page = 'create'
+    initCreate()
+  </script>
+</body>
+</html>

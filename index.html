@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StudentRent — Find Rooms Near Colleges</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">StudentRent</h1>
+      <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="create.html" class="btn-primary">List a place</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-section card">
+      <input id="searchInput" placeholder="Search by college, city, or landmark (e.g., DGI, Jamia)..." />
+    </section>
+
+    <section class="layout">
+      <aside class="sidebar card">
+        <h3>Filters</h3>
+
+        <label class="label">Max Rent: <strong id="rentValue">20000</strong></label>
+        <input id="rentRange" type="range" min="1000" max="50000" step="500" value="20000" />
+
+        <label class="label">Property type</label>
+        <select id="typeSelect">
+          <option value="">Any</option>
+          <option value="PG">PG</option>
+          <option value="Apartment">Apartment</option>
+          <option value="Room">Room</option>
+        </select>
+
+        <label class="label">College / Location</label>
+        <select id="collegeSelect">
+          <option value="">All Colleges</option>
+        </select>
+
+        <div style="margin-top:12px">
+          <button id="resetListingsBtn" class="btn-ghost">Reset sample data</button>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div id="listingsGrid" class="grid"></div>
+        <div id="noResults" class="no-results">No listings match your filters.</div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© StudentRent — Demo project</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    window.page = 'home'
+    initHome()
+  </script>
+</body>
+</html>
